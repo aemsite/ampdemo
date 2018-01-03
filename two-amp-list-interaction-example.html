@@ -1,0 +1,107 @@
+<!-- ## Show more button -->
+<!--
+This is a sample showing how to implement the "show more" design pattern.
+ "Show more" is common design pattern used on e-commerce category pages to lazy load more content triggered by an user interaction.
+
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+  <!-- ## Setup -->
+  <!-- Additionally used AMP components must be imported in the header. We use `amp-list` for showing a list of products -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <!-- We use `amp-bind` for dynamically changing the src of `amp-list` -->
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <!-- We use `amp-form` for making the call to get extra products after an user interaction -->
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <!-- We use `amp-mustache` for rendering the `amp-list` content -->
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+  <link rel="canonical" href="https://ampbyexample.com/advanced/load_more_button/">
+  <title>Load more button</title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    .btn {
+      background-color: red;
+      padding: 10px;
+      color: white;
+    }
+
+    .hide {
+      display: none;
+    }
+    .text-selected {
+        color: red;
+    }
+    p {
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- ## How to implement a show more button -->
+  <!-- You can implement a show more button by using `amp-list` and `amp-bind`, where
+  `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
+  which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
+  <amp-state
+    id="productsState"
+    src="https://ampbyexample.com/json/related_products.json">
+  </amp-state>
+
+
+  <amp-list
+    src="https://jsonplaceholder.typicode.com/albums"
+    layout="fixed-height"
+    width="auto"
+    height="500px"
+    items="."
+  >
+   <template type="amp-mustache">
+       <p role="button" [class]="albumState.albumId == {{id}} ? 'text-selected' : ''" on="tap: AMP.setState({
+            albumState: {
+                albumId: {{id}}
+            }
+       }), photo-list.show">
+            <strong>Album Id</strong>: {{id}}
+            <strong>Album Title</strong>: {{title}}
+       </p>
+   </template>
+ </amp-list>
+
+ <amp-list
+    id="photo-list"
+    src="'https://jsonplaceholder.typicode.com/photos'"
+    [src]="'https://jsonplaceholder.typicode.com/photos?albumId=' + albumState.albumId"
+    layout="fixed-height"
+    width="auto"
+    height="500px"
+    items="."
+    hidden
+  >
+   <template type="amp-mustache">
+       <p role="button"
+       on="tap: AMP.setState({
+         {{title}}: {{thumbnailUrl}}
+       })">
+            <strong>Photos Title</strong>: {{title}}
+       </p>
+   </template>
+ </amp-list>
+
+
+      <amp-state id="albumState">
+        <script type="application/json">
+          {
+            albumId: '0'
+          }
+        </script>
+      </amp-state>
+</body>
+</html>
