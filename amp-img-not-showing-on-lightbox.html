@@ -1,0 +1,211 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <title>Hello AMP world</title>
+    <link rel="canonical" href="hello-world.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+    </style>
+    <noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <style>
+        amp-lightbox {
+            background-color: aliceblue;
+        }
+
+        .box {
+            box-sizing: border-box;
+            width: 100%;
+            position: relative;
+            border: 1px solid #000;
+        }
+
+        .box span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            object-fit: cover;
+        }
+
+        .box::after {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        #lb3 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            background-color: antiquewhite;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 on="tap:lb">dianwo 查看lightbox 添加scrollable 异步图片无法加载的问题</h1>
+
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+    <h1>11</h1>
+
+
+    <amp-lightbox id="lb" layout="nodisplay" scrollable>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <h1>11</h1>
+        <amp-list width="auto" height="100" layout="fixed-height" src="https://jsonplaceholder.typicode.com/photos?albumId=1"
+            items=".">
+            <template type="amp-mustache">
+                <div class="box">
+                    <span>
+                        <amp-img src="{{thumbnailUrl}}" layout="responsive" width="300" height="300">
+                        </amp-img>
+                    </span>
+                </div>
+            </template>
+        </amp-list>
+
+    </amp-lightbox>
+
+
+</body>
+
+</html>

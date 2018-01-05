@@ -1,10 +1,3 @@
-<!-- ## Show more button -->
-<!--
-This is a sample showing how to implement the "show more" design pattern.
- "Show more" is common design pattern used on e-commerce category pages to lazy load more content triggered by an user interaction.
-
--->
-<!-- -->
 <!doctype html>
 <html ⚡>
 <head>
@@ -12,17 +5,15 @@ This is a sample showing how to implement the "show more" design pattern.
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 
   <!-- ## Setup -->
-  <!-- Additionally used AMP components must be imported in the header. We use `amp-list` for showing a list of products -->
+  <!-- Additionally used AMP components must be imported in the header. We use `amp-list` for showing a list of albums -->
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <!-- We use `amp-bind` for dynamically changing the src of `amp-list` -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-  <!-- We use `amp-form` for making the call to get extra products after an user interaction -->
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <!-- We use `amp-mustache` for rendering the `amp-list` content -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
 
   <link rel="canonical" href="https://ampbyexample.com/advanced/load_more_button/">
-  <title>Load more button</title>
+  <title>AMP 2000 bindings</title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -43,19 +34,15 @@ This is a sample showing how to implement the "show more" design pattern.
     p {
         cursor: pointer;
     }
+    .blue {
+        color: blue;
+    }
+    .pink {
+        color: pink;
+    }
   </style>
 </head>
 <body>
-  <!-- ## How to implement a show more button -->
-  <!-- You can implement a show more button by using `amp-list` and `amp-bind`, where
-  `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
-  which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
-  <amp-state
-    id="productsState"
-    src="https://ampbyexample.com/json/related_products.json">
-  </amp-state>
-
-
   <amp-list
     src="https://jsonplaceholder.typicode.com/albums"
     layout="fixed-height"
@@ -74,7 +61,7 @@ This is a sample showing how to implement the "show more" design pattern.
        </p>
    </template>
  </amp-list>
-
+<hr>
  <amp-list
     id="photo-list"
     src="'https://jsonplaceholder.typicode.com/photos'"
@@ -88,14 +75,53 @@ This is a sample showing how to implement the "show more" design pattern.
    <template type="amp-mustache">
        <p role="button"
        on="tap: AMP.setState({
-         {{title}}: {{thumbnailUrl}}
+         {{title}}: '{{thumbnailUrl}}'
        })">
-            <strong>Photos Title</strong>: {{title}}
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p [class]="'{{url}}'.indexOf('600') > -1 ? 'blue' : 'pink'">URL: {{url}}</p>
+          <p [class]="'{{thumbnailUrl}}'.indexOf('150') > -1 ? 'pink' : 'blue'">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p [class]="'{{url}}'.indexOf('600') > -1 ? 'blue' : 'pink'">URL: {{url}}</p>
+          <p [class]="'{{thumbnailUrl}}'.indexOf('150') > -1 ? 'pink' : 'blue'">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p [class]="'{{url}}'.indexOf('600') > -1 ? 'blue' : 'pink'">URL: {{url}}</p>
+          <p [class]="'{{thumbnailUrl}}'.indexOf('150') > -1 ? 'pink' : 'blue'">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p [class]="'{{url}}'.indexOf('600') > -1 ? 'blue' : 'pink'">URL: {{url}}</p>
+          <p [class]="'{{thumbnailUrl}}'.indexOf('150') > -1 ? 'pink' : 'blue'">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p [class]="'{{url}}'.indexOf('600') > -1 ? 'blue' : 'pink'">URL: {{url}}</p>
+          <p [class]="'{{thumbnailUrl}}'.indexOf('150') > -1 ? 'pink' : 'blue'">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <!--
+          Simple Copy, No error if direct render.
+            <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p class="blue">URL: {{url}}</p>
+          <p class="pink">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p class="blue">URL: {{url}}</p>
+          <p class="pink">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p class="blue">URL: {{url}}</p>
+          <p class="pink">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p class="blue">URL: {{url}}</p>
+          <p class="pink">Thumbnail URL: '{{thumbnailUrl}}'</p>
+          <p>AlbumID: {{id}}</p>
+          <p>Photos Title: {{title}}</p>
+          <p class="blue">URL: {{url}}</p>
+          <p class="pink">Thumbnail URL: '{{thumbnailUrl}}'</p>-->
        </p>
    </template>
  </amp-list>
-
-
       <amp-state id="albumState">
         <script type="application/json">
           {
