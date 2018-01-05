@@ -11,7 +11,7 @@ Please play around with **amp-binding-limit-exceeds-issue.html** in order to rep
 
 This demo contains 2 `<amp-list>`, the first `<amp-list>`fetches all albums; the second `<amp-list>` fetches all **photos** based on the **album selected** by user.
 
-[Imgur](https://i.imgur.com/BITUjz8.gifv)
+![Imgur](https://i.imgur.com/BITUjz8.gifv)
 
 ## Page Navigation issue
 
@@ -25,7 +25,7 @@ Pass some product attributes selected by users from Product List page to Product
 
 If using the `<a [href]>` We notice `<a [href]>` will auto append `domain` as prefix if the element `<a>` is inside `<amp-list>`. Please play around with **dynamic-href-in-amp-list.html** to reproduce the error.
 
-[Imgur](https://i.imgur.com/xLX7Geg.gifv)
+![Imgur](https://i.imgur.com/xLX7Geg.gifv)
 
 ## amp-img is not showing on scrollable <amp-lightbox>
 
@@ -33,10 +33,10 @@ Basically we do have 1 `<amp-list>` within `<amp-lightbox>`, and by default `<am
 
 Please play around **amp-img-not-showing-on-lightbox.html** for more information.
 
-[Imgur](https://i.imgur.com/EcIjAFo.gifv)
+![Imgur](https://i.imgur.com/EcIjAFo.gifv)
 
 ## auto carousel stop after user tap & scroll
 
 The scene is that we have an `<amp-carousel>` in our home page, the normal interaction has no problem. But when a user is tapping down a banner and scroll it, after that, the carousel can not automatically scrolling anymore. You can see our demo and check the effect.
 
-[Imgur](https://i.imgur.com/qAw2BYY.gifv)
+![Imgur](https://i.imgur.com/qAw2BYY.gifv)
