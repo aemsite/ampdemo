@@ -17,7 +17,7 @@ Basically, we have tried 4 approaches to do the navigation, more information on 
 Example:
 
 ----
-###Product List Page -> Product Detail Page.
+### Product List Page -> Product Detail Page.
 
 Pass some product attributes selected by users from Product List page to Product Detail page as parameter.
 
@@ -28,7 +28,7 @@ If using the `<a [href]>` We notice `<a [href]>` will auto append `domain` as pr
 ## amp-img is not showing on scrollable <amp-lightbox>
 
 
-Basically we do have 1 `<amp-list>` within `<amp-lightbox>`, and by default `<amp-img>` is not on the screen viewport,  it is not showing even though we have scroll to bottom of the page. Is there any **actions or events** that we can trigger the`<amp-img>` by overwriting `<amp-img>` nature lazy behavior ? else , any suggestions on this ?
+Basically we do have 1 `<amp-list>` within `<amp-lightbox>`, and by default `<amp-img>` is not on the screen viewport,  it is not showing even though we have scroll to bottom of the page. Is there any **actions or events** that we can trigger the`<amp-img>` to **display** by overwriting `<amp-img>` nature lazy behavior ? else , any suggestions on this ?
 
 Please play around **amp-img-not-showing-on-lightbox.html** for more information.
 
