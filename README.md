@@ -1,4 +1,6 @@
-# AMP related issues encountered by AliExpress Team - Demo for debugging purpose
+# AMP related issues encountered by AliExpress Team
+
+	> Demo for debugging purpose
 
 ## amp-bind exceeds 2000 binding issues?
 
