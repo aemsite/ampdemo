@@ -27,7 +27,7 @@ If using the `<a [href]>` We notice `<a [href]>` will auto append `domain` as pr
 
 ![ezgif com-video-to-gif 5](https://user-images.githubusercontent.com/4065175/34616046-e0cfa9c6-f271-11e7-9732-53e08dcf5ade.gif)
 
-## amp-img is not showing on scrollable <amp-lightbox>
+## amp-img is not showing on scrollable `<amp-lightbox>`
 
 Basically we do have 1 `<amp-list>` within `<amp-lightbox>`, and by default `<amp-img>` is not on the screen viewport,  it is not showing even though we have scroll to bottom of the page. Is there any **actions or events** that we can trigger the`<amp-img>` to **display** by overwriting `<amp-img>` nature lazy behavior ? else , any suggestions on this ?
 
