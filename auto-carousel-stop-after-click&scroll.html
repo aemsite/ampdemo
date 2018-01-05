@@ -1,0 +1,286 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <link rel="canonical" href="https://ampbyexample.com/components/amp-carousel/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<style amp-custom>
+
+body {
+    font-size: 12px;
+    color: #3A3E4A;
+    font-family: Roboto, Open Sans, Helvetica, Arial;
+    line-height: 1.3;
+    background-color: #f2f2f2;
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+a {
+    -webkit-touch-callout: none;
+    text-decoration: none;
+    color: #3A3E4A
+}
+
+img {
+    max-width: 100%
+}
+
+
+
+
+
+
+   #ms-header {
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+    top: 0;
+    position: fixed;
+}
+#ms-header .download-bar {
+    height: 56px;
+    overflow: hidden;
+    border-bottom: 1px solid #EBEBEC;
+}
+#ms-header .download-bar a {
+    display: block;
+}
+main {
+    padding-top:112px;
+}
+#marker {
+    position: absolute;
+    top: 56px;
+    width: 0;
+    height: 0;
+}
+.header-toolbar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    height: 56px;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24);
+}
+/*amp轮播图左右按钮*/
+.amp-carousel-button {
+    display: none;
+}
+/*轮播图样式*/
+.relative {
+    position: relative;
+}
+.banner-wrap {
+    margin-bottom: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.24)
+}
+.banner-wrap a {
+    display: block
+}
+.kv-tab {
+    height: 16px;
+    text-align: center;
+    line-height: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+}
+.kv-tab li {
+    background-color: #fff;
+    border-radius: 6px;
+    display: inline-block;
+    height: 0;
+    width: 6px;
+    overflow: hidden;
+    padding: 6px 0 0 0;
+    margin: 0 2px;
+    opacity: .8
+}
+.kv-tab li.current {
+    background-color: #e62e04;
+    opacity: 1
+}
+</style>
+</head>
+<body>
+<amp-state id="home">
+    <script type="application/json">
+        {
+            "selectedSlide": 0
+        }
+    </script>
+</amp-state>
+
+    <header id="ms-header">
+        <section class="ms-downloadbar-wrap " id="ms-downloadbar-wrap">
+            <div class="download-bar">
+                <a href="//m.aliexpress.com/d.do">
+                    <amp-img class="ms_topbanner_image_pic" src="//ae01.alicdn.com/kf/HTB1EjNeXm_I8KJjy0Fo761FnVXac.png" layout="fixed-height" height="56"></amp-img>
+                </a>
+            </div>
+        </section>
+        <div id="header-toolbar" class="header-toolbar">
+
+        <div id="ms-logo" class="ic-wp">
+            <amp-img src="https://ae01.alicdn.com/kf/HTB10eZQQpXXXXXRXVXX760XFXXXO.png" width="99" height="24"></amp-img>
+        </div>
+    </header>
+
+    <amp-animation id="shrinkAnim" layout="nodisplay">
+        <script type="application/json">
+            {
+            "duration": "200ms",
+              "fill": "both",
+                "iterations": "1",
+                  "direction": "alternate",
+                    "animations": [
+                      {
+                        "selector": "#ms-header",
+                        "keyframes": [
+                          { "transform": "translateY(-112px)" }
+                        ]
+                      },
+                      {
+                        "selector": "#ms-header .header-toolbar",
+                        "keyframes": [
+                          { "transform": "translateY(56px)" }
+                        ]
+                      }
+                    ]
+            }
+        </script>
+    </amp-animation>
+    <amp-animation id="expandAnim" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "50ms",
+          "fill": "both",
+            "iterations": "1",
+              "direction": "alternate",
+                "animations": [
+                  {
+                    "selector": "#ms-header",
+                    "keyframes": [
+                      { "transform": "translateY(0)"}
+                    ]
+                  },
+                  {
+                    "selector": "#ms-header .header-toolbar",
+                    "keyframes": [
+                      { "transform": "translateY(0)" }
+                    ]
+                  }
+                ]
+      }
+    </script>
+    </amp-animation>
+    <main>
+        <div id="marker">
+            <amp-position-observer
+                on="enter:expandAnim.start; exit:shrinkAnim.start;"
+                layout="nodisplay">
+            </amp-position-observer>
+        </div>
+    </main>
+
+
+    <section>
+        <div class="banner-wrap">
+            <div class="relative">
+                <amp-carousel width="750" height="300" layout="responsive" type="slides" loop autoplay delay="2500"
+                    on="slideChange: AMP.setState({home:{selectedSlide: event.index}})">
+                    <a rel="nofollow" href="https://sale.aliexpress.com/Dec_accessory.htm">
+                        <amp-img src="//ae01.alicdn.com/kf/HTB1NhUgjdfJ8KJjy0Fe760KEXXaG.png" alt="image" width="750" height="300" class="banner1" layout="responsive"></amp-img>
+                    </a>
+                    <a rel="nofollow" href="https://sale.aliexpress.com/Dec_feedback_m.htm">
+                        <amp-img src="//ae01.alicdn.com/kf/HTB1MUjNir_I8KJjy1Xa762sxpXaQ.png" alt="image" width="750" height="300" class="banner2" layout="responsive"></amp-img>
+                    </a>
+                    <a rel="nofollow" href="https://m.aliexpress.com/store/storeHome.htm?sellerAdminSeq=229536691">
+                        <amp-img src="//ae01.alicdn.com/kf/HTB1uHNjidrJ8KJjSspaq6xuKpXaV.jpg" alt="image" width="750" height="300" class="banner3" layout="responsive"></amp-img>
+                    </a>
+                    <a rel="nofollow" href="https://sale.aliexpress.com/handled_dec_25_P.htm">
+                        <amp-img src="//ae01.alicdn.com/kf/HTB13LsJjDvI8KJjSspjq6AgjXXax.jpg" alt="image" width="750" height="300" layout="responsive"></amp-img>
+                    </a>
+                    <a rel="nofollow" href="https://sale.aliexpress.com/dec_boxes.htm">
+                        <amp-img src="//ae01.alicdn.com/kf/HTB1884ujb_I8KJjy1Xa762sxpXaB.png" alt="image" width="750" height="300" layout="responsive"></amp-img>
+                    </a>
+                </amp-carousel>
+                <ul class="kv-tab">
+                    <li class="current" [class]="home.selectedSlide==0? 'current' : ''"></li>
+                    <li [class]="home.selectedSlide==1? 'current' : ''"></li>
+                    <li [class]="home.selectedSlide==2? 'current' : ''"></li>
+                    <li [class]="home.selectedSlide==3? 'current' : ''"></li>
+                    <li [class]="home.selectedSlide==4? 'current' : ''"></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+    <h1>why not me?</h1>
+
+</body>
+</html>
