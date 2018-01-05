@@ -62,11 +62,10 @@ This is a sample showing how to implement the "show more" design pattern.
   </amp-state>
   <button class="btn" on="tap:AMP.setState({
     hrefState: {
-      link: 'www.aliexpress.com'
+      link: 'https://www.google.com'
     }
-  })"> Change AMP state</button>
-  <button class="btn"><a href="www.bi.com" [href]="hrefState.link">This is a Href Button</a></button>
-  <button class="btn"><a href="www.google.com">This is a button to google</a></button>
+  })"> Change [href] link state to www.google.com</button>
+  <button class="btn"><a href="www.bing.com" [href]="hrefState.link">This is a Href Button outside amp list, work perfect!</a></button>
 
   <!-- We bind the `src` attribute of the `amp-list` to the `amp-state` object containing the products
       from that component as a `src`. -->
@@ -79,7 +78,7 @@ This is a sample showing how to implement the "show more" design pattern.
     class="m1"
   >
    <template type="amp-mustache">
-      <button class="btn"><a href="www.bi.com" [href]="hrefState.link">This is a Href Button</a></button>
+     <button class="btn"><a href="https://www.bing.com" [href]="hrefState.link">default to bing.com, [href] to www.google.com</a></button>
      <amp-img width="24" height="24" layout="fixed" alt="{{name}}" src="https://ampbyexample.com{{img}}"></amp-img>
      <strong>Product</strong>: {{name}}
      <strong>Price</strong>: ${{price}}
