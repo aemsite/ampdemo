@@ -1,0 +1,42 @@
+{
+    "requests":
+    {
+        "pageview": "https://amp.hackshen.com/test.html?shen=${eventId}"
+    },
+    "transport":
+    {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
+    },
+    "triggers":{
+        "trackBrandTest":{
+            "on": "visible",
+            "request": "pageview",
+            "selector": ".box2031886045",
+            "selectionmethod": "closest",
+            "visibilitySpec": {
+                "visiblePercentageMin": 20,
+                "totalTimeMin": 500,
+                "continuousTimeMin": 200
+            }
+        },
+        "trackBrandTest2":{
+            "on": "visible",
+            "request": "pageview",
+            "selector": ".box32790289816",
+            "selectionmethod": "closest",
+            "visibilitySpec": {
+                "visiblePercentageMin": 20,
+                "totalTimeMin": 500,
+                "continuousTimeMin": 200
+            }
+        },
+        "trackBrandTestClick":{
+            "on": "click",
+            "request": "pageview",
+            "selector": "amp-img",
+            "selectionmethod": "closest"
+        }
+    }
+}
