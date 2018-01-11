@@ -10,33 +10,21 @@
         "image": true
     },
     "triggers":{
-        "trackBrandTest":{
+        "trackProductVisible":{
             "on": "visible",
             "request": "pageview",
-            "selector": ".box2031886045",
-            "selectionmethod": "closest",
+            "selector": "amp-img",
+            "selectionMethod": "closest",
             "visibilitySpec": {
                 "visiblePercentageMin": 20,
-                "totalTimeMin": 500,
                 "continuousTimeMin": 200
             }
         },
-        "trackBrandTest2":{
-            "on": "visible",
-            "request": "pageview",
-            "selector": ".box32790289816",
-            "selectionmethod": "closest",
-            "visibilitySpec": {
-                "visiblePercentageMin": 20,
-                "totalTimeMin": 500,
-                "continuousTimeMin": 200
-            }
-        },
-        "trackBrandTestClick":{
+        "trackBrandTestClk":{
             "on": "click",
             "request": "pageview",
             "selector": "amp-img",
-            "selectionmethod": "closest"
+            "selectionMethod": "closest"
         }
     }
 }
