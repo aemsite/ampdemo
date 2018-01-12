@@ -1,0 +1,30 @@
+{
+    "requests":
+    {
+        "pageview": "https://amp.hackshen.com/test.html?shen=${eventId}"
+    },
+    "transport":
+    {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
+    },
+    "triggers":{
+        "trackProductVisible":{
+            "on": "visible",
+            "request": "pageview",
+            "selector": "amp-img",
+            "selectionMethod": "closest",
+            "visibilitySpec": {
+                "visiblePercentageMin": 20,
+                "continuousTimeMin": 200
+            }
+        },
+        "trackBrandTestClk":{
+            "on": "click",
+            "request": "pageview",
+            "selector": "amp-img",
+            "selectionMethod": "closest"
+        }
+    }
+}

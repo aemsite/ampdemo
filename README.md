@@ -40,3 +40,7 @@ Please play around **amp-img-not-showing-on-lightbox.html** for more information
 The scene is that we have an `<amp-carousel>` in our home page, the normal interaction has no problem. But when a user is tapping down a banner and scroll it, after that, the carousel can not automatically scrolling anymore. You can see our demo and check the effect.
 
 ![ezgif com-video-to-gif 6](https://user-images.githubusercontent.com/4065175/34616047-e10d0df2-f271-11e7-8551-9b8f38cebb89.gif)
+
+## async analytics issue
+
+Currently we can asynchrously clickstat with click as YUXUAN's advice, but we still have some tiny issue when it comes to visible. Check the demo for detail, because you can see that, the visible stat async request only shows once.
