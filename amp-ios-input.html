@@ -1,0 +1,64 @@
+<!doctype html>
+<html ⚡>
+<head>
+<meta charset="utf-8">
+<title>amp-lightbox</title>
+<link rel="canonical" href="https://ampbyexample.com/components/amp-lightbox/">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<style amp-boilerplate>
+body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+<noscript>
+    <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+</noscript>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp-custom>
+    header {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        height: 56px;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #fff;
+        -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.24);
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.24);
+    }
+    #input-focus {
+        width: 100%;
+        padding-left: 24px;
+        font-size: 18px;
+        outline: 0;
+        border: none;
+    }
+    amp-lightbox {
+        background:#fff;
+    }
+    .open-lightbox,.close-lightbox {
+        display: block;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        background-color: #ff0;
+    }
+</style>
+</head>
+<body>
+    <amp-lightbox id="my-lightbox" layout="nodisplay" on="lightboxOpen:inputFocus.focus">
+        <header>
+            <form id="autoSearch" method="GET" action="https://m.aliexpress.com/search.htm" target="_top">
+                <input type="text" id="inputFocus" class="search-box" autofocus autocomplete="off" placeholder="I'm shopping for..." value="">
+            </form>
+        </header>
+        <button class="close-lightbox" on="tap:my-lightbox.close">close</button>
+    </amp-lightbox>
+    <button class="open-lightbox" on="tap:my-lightbox" role="button" tabindex="-1">Open</button>
+    <h1>test for ios focus</h1>
+</body>
+</html>
