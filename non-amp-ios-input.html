@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>demo for ios focus</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+
+</head>
+<body>
+    <style type="text/css">
+        #ms-outer img {
+            width: 79px;
+            height: 19px;
+        }
+        #open-search, #close-search {
+            background: #ff0;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #search-box {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+        }
+        #search-box input {
+            border: 1px solid #ccc;
+        }
+    </style>
+
+<header class="ms-header mini">
+    <a href="//m.aliexpress.com/" id="ms-outer" class="for-outer">
+        <img src="//ae01.alicdn.com/kf/HTB1O8URHFXXXXXPaXXX760XFXXXQ.png" alt="AE Logo">
+    </a>
+    <div class="header-main">
+        <div id="open-search">open</div>
+    </div>
+</header>
+
+<div id="search-box">
+    <form action="/search.htm">
+        <div class="ms-autocomplete-main">
+            <input id="search-input" type="search" value="" placeholder="search" name="keywords" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" />
+        </div>
+        <div id="close-search">close</div>
+    </form>
+</div>
+
+<script>
+    var openButton = document.getElementById("open-search");
+    var closeButton = document.getElementById("close-search");
+    var searchBox = document.getElementById("search-box");
+    var searchInput = document.getElementById("search-input");
+    openButton.onclick = function () {
+        searchBox.style.display = "block";
+        searchInput.focus();
+    }
+    closeButton.onclick = function () {
+        searchBox.style.display = "none";
+    }
+</script>
+
+
+
+</body>
+</html>
