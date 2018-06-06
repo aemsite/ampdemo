@@ -13,6 +13,10 @@ This demo contains 2 `<amp-list>`, the first `<amp-list>`fetches all albums; the
 
 ![ezgif com-video-to-gif 3](https://user-images.githubusercontent.com/4065175/34616043-e0556094-f271-11e7-9a4a-2002f190f436.gif)
 
+## AMP List Reset on Refresh
+
+This demo shows that `amp-list` attribute (reset-on-refresh) is not working with form-submission.
+
 ## Page Navigation issue
 
 Basically, we have tried 4 approaches to do the navigation, more information on [github # 12610](https://github.com/ampproject/amphtml/issues/12610)
