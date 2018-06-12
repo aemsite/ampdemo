@@ -65,12 +65,18 @@
   <form id="form-filter" method="GET" target="_top"
     action="https://jsonplaceholder.typicode.com/albums"
     action-xhr="https://jsonplaceholder.typicode.com/albums"
-    on="submit: list1.refresh">
+    on="submit: AMP.setState({
+      myState2: 'Leon is Good Boy'
+    }), list1.refresh">
   </form>
 
 <amp-state id="myState" src="https://jsonplaceholder.typicode.com/albums">
 <script type="application/json">
 </script>
+</amp-state>
+<amp-state id="myState2" src="https://jsonplaceholder.typicode.com/albums">
+  <script type="application/json">
+  </script>
 </amp-state>
 
 
