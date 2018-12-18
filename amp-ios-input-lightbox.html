@@ -50,10 +50,15 @@ body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animatio
 </style>
 </head>
 <body>
-    <div id="input-wrap" hidden>
-        <input type="text" id="inputFocus" class="search-box" autofocus autocomplete="off" placeholder="I'm shopping for..." value="">
-    </div>
-    <button class="open-lightbox" on="tap: input-wrap.show, inputFocus.focus" role="button" tabindex="-1">Open</button>
+    <amp-lightbox id="my-lightbox" layout="nodisplay" on="lightboxOpen:inputFocus.focus">
+        <header>
+            <form id="autoSearch" method="GET" action="https://m.aliexpress.com/search.htm" target="_top">
+                <input type="text" id="inputFocus" class="search-box" autofocus autocomplete="off" placeholder="I'm shopping for..." value="">
+            </form>
+        </header>
+        <button class="close-lightbox" on="tap:my-lightbox.close">close</button>
+    </amp-lightbox>
+    <button class="open-lightbox" on="tap:my-lightbox" role="button" tabindex="-1">Open</button>
     <h1>test for ios focus</h1>
 </body>
 </html>

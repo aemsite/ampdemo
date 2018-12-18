@@ -49,6 +49,11 @@ The scene is that we have an `<amp-carousel>` in our home page, the normal inter
 
 Currently we can asynchrously clickstat with click as YUXUAN's advice, but we still have some tiny issue when it comes to visible. Check the demo for detail, because you can see that, the visible stat async request only shows once.
 
-
 ## cant close lightbox issue
 Basically when the lightbox is styled with `position:fixed`, then when users trigger `lightbox.close` actions, the `[hidden]` is not appended to the lightbox anymore.
+
+## focus not working on iOS lightbox
+The focus on input is not working on the amp-lightbox on iOS device
+
+## focus is not working on iOS device
+The focus on input is not working on iOS device
