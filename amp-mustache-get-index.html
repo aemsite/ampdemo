@@ -48,7 +48,7 @@
             <template type="amp-mustache" id="amp-template-id">
                 <div class="list-child">
                     <!-- This is where the hack lies, basically it will compare based on something unique, if matched, return the index of Array.map, lastly, convert the array to String -->
-                    <span class="index" [text]="totalItems.map((item, index) => item.title == '{{title}}' ? index : null).join('')"></span>
+                    <span class="index" [text]="totalItems.map((itemContent, index) => itemContent.id == '{{id}}' ? index : null).join('')"></span>
                     <span> : </span>
                     <span class="title">{{title}}</span>
                 </div>
