@@ -57,3 +57,6 @@ The focus on input is not working on the amp-lightbox on iOS device
 
 ## focus is not working on iOS device
 The focus on input is not working on iOS device
+
+## AMP mustache hack to get current Index
+using the amp-bind to get the currentIndex for each items inside the mustache
