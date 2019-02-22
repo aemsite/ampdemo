@@ -60,3 +60,11 @@ The focus on input is not working on iOS device
 
 ## AMP mustache hack to get current Index
 using the amp-bind to get the currentIndex for each items inside the mustache
+
+## Infinite-scroll
+
+### Steps
+0. `npm install`
+1. turn on `nginx`
+2. execute `npm run dev`
+3. visit `http://127.0.0.1/infinite-scroll`
